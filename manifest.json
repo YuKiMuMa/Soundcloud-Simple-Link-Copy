@@ -1,0 +1,11 @@
+{
+  "name": "Soundcloud Simple Link Copy",
+  "description": "By installing the extension, a button will be added to soudcloud that allows you to copy a simple link.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "backgroud.js"
+  },
+  "host_permissions": ["https://soundcloud.com/*"],
+  "permissions": ["tabs", "scripting"]
+}
