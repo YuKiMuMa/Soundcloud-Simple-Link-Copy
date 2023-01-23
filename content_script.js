@@ -1,14 +1,18 @@
-addButtons();
+addFeaturesAttempt();
 
+function addFeaturesAttempt(){
+  if(!addButtons()) setTimeout(addFeaturesAttempt, 500); // retry after 500 millisecconds
+}
 
 function addButtons(){
   const nav = document.querySelector(".sc-button-group.sc-button-group-medium");
   const nav2 = document.querySelector(".sc-button-copylink.sc-button-secondary.sc-button.sc-button-medium.sc-button-responsive.simplelink");
-  //console.log(nav2)
+  //console.log(nav);
+  //console.log(nav2);
   if(!nav || nav2) return false; 
   let b;
 
-  b = createSideBarButton("Fortune", "運");
+  b = createSideBarButton();
   b.onclick = fortuneButtonClicked;
   nav.appendChild(b);
 
@@ -16,7 +20,7 @@ function addButtons(){
 }
 
 
-function createSideBarButton(labelText, iconText){
+function createSideBarButton(){
   const original = document.querySelectorAll(".sc-button-copylink");
   const original2 = document.querySelector(".sc-button-copylink");
   const b = original2.cloneNode(true);
