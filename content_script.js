@@ -35,9 +35,15 @@ function createSideBarButton(){
 }
 
 function fortuneButtonClicked(){
-  const link=document.querySelector(".sc-ministats.sc-ministats-medium.sc-ministats-likes.sc-link-secondary")
-  console.log(link.href.slice( 0, -5))
-  copyToClipboard(link.href.slice( 0, -5))
+  try{
+    const link=document.querySelector(".sc-ministats.sc-ministats-medium.sc-ministats-likes.sc-link-secondary")
+    console.log(link.href.slice( 0, -5))
+    copyToClipboard(link.href.slice( 0, -5))
+  }
+  catch{
+    alert("Fail")
+  }
+  
 }
 
 function copyToClipboard (tagValue) {
